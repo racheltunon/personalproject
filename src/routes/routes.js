@@ -7,7 +7,7 @@ import Register from '../components/Auth/Register/Register'
 import ShoppingCart from '../components/ShoppingCart/ShoppingCart'
 import Favorites from '../components/Favorites/Favorites'
 import Dashboard from '../components/Store/Dashboard/Dashboard'
-import Categories from '../components/Store/Categories/Categories'
+import Categories from '../components/Store/Categories'
 import Account from '../components/User/Account/Account'
 import Settings from '../components/User/Account/Settings'
 
@@ -21,7 +21,9 @@ export default (
         <Route component = {ShoppingCart} path = '/cart' />
         <Route component = {Favorites} path = './saved'/>
         <Route component = {Dashboard} path = '/dashboard' />
-        <Route component = {Categories} path = '/dashboard/:categories' />
+        <Route component = {Categories} path = '/categories/:id' />
+        <Route component = {Categories} path = '/categories/:id/:id' />
+        <Route component = {Categories} path = '/categories' />
         <Route component = {Account} path = '/account' />
         <Route component = {Settings} path = '/account/:settings' />
     </Switch>

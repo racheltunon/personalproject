@@ -1,6 +1,22 @@
+.hero {
+    height: 40vh;
+
+    
+}
+
 .nav {
+
+    height: 10vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+button.register {
+    background: url('http://www.w3.org/2000/svg') no-repeat top right;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    max-height: 40px;
 }

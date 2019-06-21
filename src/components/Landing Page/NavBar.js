@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {Component}from 'react'
 import {Link} from 'react-router-dom'
+// import ProfilePic from '../../images/IconOffice'
 import './Landing.css'
 
-function NavBar() {
+class NavBar extends Component {
+    render() {
     return (
         <div className='nav'>
             <Link to='/'>
@@ -13,7 +15,8 @@ function NavBar() {
                     <button>Favorites</button>
                 </Link>
                 <Link to='/register'>
-               <button>Register</button>
+                    <button>Register</button>
+                    {/* <ProfilePic /> */}
                 </Link>
                 <Link to='/cart'>
                     <button>Cart</button>
@@ -23,5 +26,6 @@ function NavBar() {
 
 
     )
+}
 }
 export default NavBar;

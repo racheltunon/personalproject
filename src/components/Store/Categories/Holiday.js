@@ -2,10 +2,10 @@ import React, {Component} from 'react'
 import '../Categories.css'
 import {Link} from 'react-router-dom'
 
-export default class Kitchenware extends Component {
+export default class Holiday extends Component {
     render() {
         return (
-            <div>Kitchenware</div>
+            <div>Holiday</div>
         )
     }
 }

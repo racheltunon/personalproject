@@ -3,7 +3,7 @@ const express = require('express')
 const massive = require('massive')
 const session = require('express-session')
 const {registerClient, loginClient, logoutClient} = require('./controllers/authController')
-const {displayCategories} = require('./controllers/storeController')
+const {displayCategories, displayCategory, displayItems} = require('./controllers/storeController')
 
 const app = express();
 
@@ -26,6 +26,8 @@ app.post('/auth/register', registerClient)
 app.post('/auth/login', loginClient)
 app.post('/auth/logout', logoutClient)
 app.get('/api/categories', displayCategories)
+app.get('/api/items', displayItems)
+app.get('/api/categories/:category_id', displayCategory)
 // app.get('api/categories/:items')
 
 
