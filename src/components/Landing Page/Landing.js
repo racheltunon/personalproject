@@ -4,7 +4,7 @@ import Categories from '../Store/Categories'
 import {Link} from 'react-router-dom'
 import {displayCategories} from '../../redux/categoriesReducer'
 import {connect} from 'react-redux'
-import './Landing.css' 
+import './Landing.scss' 
 
 
 

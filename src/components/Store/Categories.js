@@ -3,7 +3,7 @@ import {connect } from 'react-redux'
 import {Link, Redirect} from 'react-router-dom'
 import { displayItems, displayCategory} from '../../redux/categoriesReducer'
 import NavBar from '../Landing Page/NavBar'
-import './Categories.css'
+import './Categories.scss'
 import axios from 'axios';
 
 

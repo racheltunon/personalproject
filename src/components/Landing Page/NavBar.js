@@ -1,7 +1,7 @@
 import React, {Component}from 'react'
 import {Link} from 'react-router-dom'
 // import ProfilePic from '../../images/IconOffice'
-import './Landing.css'
+import './Landing.scss'
 
 class NavBar extends Component {
     render() {
