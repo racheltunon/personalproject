@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>search</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Mockups" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-183.000000, -51.000000)" fill="#FFFFFF">
+            <g id="search" transform="translate(183.000000, 51.000000)">
+                <path d="M10,20 C4.48646558,20 0,15.5135344 0,10 C0,4.48646558 4.48646558,0 10,0 C15.5135344,0 20,4.48646558 20,10 C20,15.5135344 15.5135344,20 10,20 L10,20 Z M10,1.43851508 C5.27919567,1.43851508 1.43851508,5.27919567 1.43851508,10 C1.43851508,14.7208043 5.27919567,18.5614849 10,18.5614849 C14.7208043,18.5614849 18.5614849,14.7208043 18.5614849,10 C18.5614849,5.27919567 14.7208043,1.43851508 10,1.43851508 L10,1.43851508 Z" id="Fill-1"></path>
+                <polyline id="Fill-2" points="23.7779912 25 16 17.2220088 17.2220088 16 25 23.7779912 23.7779912 25"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -23,12 +23,17 @@ module.exports={
     },
     loginClient,
     logoutClient: (req, res) => {
-        req.session.destroy();
-        res.status(200)
+        const {session} = req;
+        session.destroy();
+        res.status(200).send(req.session)
     },
     getClient: (req, res) => {
-
-    }
+        if(req.session.client) {
+            res.json(req.session.client)
+        } else {
+            res.status(401).json({error: "Please Log In"})
+        }
+     }
 }
 
 async function loginClient(req, res) {

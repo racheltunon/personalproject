@@ -4,13 +4,18 @@ import Categories from '../Store/Categories'
 import {Link} from 'react-router-dom'
 import {displayCategories} from '../../redux/categoriesReducer'
 import {connect} from 'react-redux'
+
+import {ReactComponent as Sunset} from '../../images/Sunset.svg'
+import {ReactComponent as Mountain} from '../../images/Mountain.svg'
+
+import '../Store/Categories.scss'
 import './Landing.scss' 
 
 
 
  class Landing extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {}
      }  
 
@@ -38,20 +43,23 @@ import './Landing.scss'
         })
          return (
              <div className="landingPage">
-             <nav>
-                 <NavBar/>
-                 <div className="hero"> 
-                    <h1>VIOLET RIOT VINTAGE</h1>
-                 {/* animated rose image
-                 social media links */}
-                 {/* iphone img
-                 instagram feed */}
-                 </div>
-                 <div>
+                 <Sunset className="sunset"/>
+                 <Mountain className="mountain"/>
+                   <NavBar className="navBar"/>
+                   <div className="title">
+                   <h3>#WeThriftYouScore</h3>
+                   <h1>VIOLET RIOT VINTAGE</h1>
+                    </div>
+                   <Link className="learn" to="/about">
+                       <h4>learn more.</h4>
+                   </Link>
+             
+                 <div className="categoryList">
                  {categoryList}
                  </div>
-             </nav>
+           
              </div>
+            
          )
      }
 }
@@ -64,3 +72,5 @@ function mapStateToProps(state) {
 export default connect(
     mapStateToProps,
     {displayCategories})(Landing);
+
+

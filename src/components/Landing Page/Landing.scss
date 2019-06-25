@@ -1,22 +1,119 @@
+.landingPage {
+    position: relative;
+    z-index: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+
+}
+
 .hero {
     height: 40vh;
 
     
 }
 
-.nav {
 
-    height: 10vh;
+.nav {
+    margin-top: 49px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-content: space-around;
     align-items: center;
+    position: fixed;
+    z-index: 6;
+   
+    width: 80vw;
+
+.right-nav {
+    display: flex;
+    width: 150px;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    left: 1280px;
+
+}
+    
+}
+.title {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+   
+    height: 40vh;
+    margin-top: 230px;
+    left: 169px;
+    position: absolute;
+    z-index: 3;
 }
 
+.title h1 {
+display: flex;
+align-items: center;
+color: white;
+font-family: inter-black;
+font-size: 92px;
+letter-spacing: 20.38px;
+line-height: 115px;
+text-shadow: 0 0 0 rgba(0,0,0,0.50);
+width: 60vw;
+height: 285px;
+top: 285px;
+
+
+}
+.title h3 {
+  
+transform: rotate(-90deg);
+font-family: Inter-Medium;
+font-weight: 300;
+font-size: 20px;
+color: #FFFFFF;
+letter-spacing: 3.67px;
+text-decoration: line-through;
+top: 270px;
+left: 169px;
+width: 200px;
+height: 18px;
+}
+.learn {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index:4;
+    top: 600px;
+    left: 390px;
+    text-decoration: none;
+}
+.learn h4 {
+font-family: Inter-Regular;
+font-weight: 200;
+font-size: 16px;
+color: #FFFFFF;
+letter-spacing: 2.72px;
+
+}
 button.register {
     background: url('http://www.w3.org/2000/svg') no-repeat top right;
     background-size: contain;
     cursor: pointer;
     display: inline-block;
     max-height: 40px;
+}
+.sunset {
+
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    
+}
+.mountain {
+position: absolute;
+z-index: 2;
+width: 100vw;
+top: 225px;
+
 }

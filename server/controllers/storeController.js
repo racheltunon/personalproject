@@ -29,6 +29,47 @@ module.exports = {
             
             res.status(500).send(error)
         })
+    },
+    addItem: (req, res) => {
+        const db = req.app.get('db')
+        const {
+            name,
+            main_img,
+            images, 
+            material,
+            description,
+            price
+        } = req.body;
+        db.addItem([name, main_img, images, material, description, price]).then(response => res.status(200).json(response))
+        .catch(error => {
+            console.log(error);
+            res.status(500).send(error);
+        })
+    },
+
+    getItemInfo: (req, res) => {
+        const db = req.app.get('db');
+        db.getItemInfo(req.params.id).then(response => res.status(200).json(response)).catch(error => {
+            res.status(500).send({errorMessage: 'Error'});
+            console.log(error)
+        })
+    },
+    editItemInfo: (req, res) => {
+        const db = req.app.get('db');
+        const {category_id, name, main_img, images, material, description, price} = req.body;
+        db.editItemInfo([
+            req.params.id,
+            category_id,
+            name,
+            main_img, 
+            images,
+            material,
+            description,
+            price
+        ]).then(response => res.status(200).json(response)).catch(error => {
+            res.status(500).send({errorMessage: 'Error'});
+            console.log(error)
+        })
     }
     // addItem: (req, res ) => {
     //     const {category, name, main_img, images, material, description, price}= req.body
