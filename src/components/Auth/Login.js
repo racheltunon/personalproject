@@ -34,7 +34,18 @@ export default class Login extends Component {
             return <Redirect to='/dashboard' />
         }
         return (
-            <div>
+            <div className="page">
+                <div className="container">
+                    <div className="left">
+                        <div className="login">
+                        <div className='terms'>
+                    <div className="right">
+                        
+                    </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
                 <h1>Sign in</h1>
                 <form>
                     <input onChange={this.handleUsername}/>

@@ -42,7 +42,11 @@ async function loginClient(req, res) {
     console.log(hash[0].password);
     bcrypt.compare(password, hash[0].password).then(doesMatch => {
         if(doesMatch === true) {
-            req.session.client = username;
+            req.session.client = {
+                username,
+                total: 0,
+                cart: []
+            };
             res.status(200).json(req.session.client)
         } else {
             res.status(403).json({error: "Incorrect Username or Password"})

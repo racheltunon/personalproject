@@ -36,8 +36,8 @@ app.post('/auth/logout', logoutClient)
 //app.post('/api/admin/add', addProduct)
 app.get('/api/categories', displayCategories)
 app.get('/api/items', displayItems)
-app.get('/api/categories/:category_id', displayCategory)
 app.get('/api/categories/:category_id/:id', getItemInfo)
+app.get('/api/categories/:category_id', displayCategory)
 
 //cart endpoints 
 app.post('/api/cart', addToCart)

@@ -8,7 +8,10 @@ export default class AddToCart extends Component {
 
     render() {
         return (
-            <div>
+            <div className="put-in-cart-container">
+                <div className="put-in-cart-component">
+                
+                </div>
                 
             </div>
         )

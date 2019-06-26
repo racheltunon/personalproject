@@ -21,11 +21,12 @@ import axios from 'axios';
      }
      render() {
          const {category, items, loading} = this.props.store
+         console.log(this.props)
          const showCategoryItems = category.map((element, id) => {
         
              return (
                  <div className="categoryItem" key={element.id}>
-                        <Link to={`/categories/${this.props.match.params.id}/${element.name}`}>
+                        <Link to={`/categories/${this.props.match.params.id}/${element.id}`}>
                             <img id="main-img" src={element.main_img}/> 
                         </Link>
                             <h1>{element.name}</h1>
