@@ -1,9 +1,13 @@
 import React, {Component} from 'react'
 import axios from 'axios' 
+import {Link} from 'react-router-dom'
 import {Redirect} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {loginClient} from '../../redux/clientReducer'
+// import {ReactComponent as Snake} from './Register/Snake.svg'
 import './Login.scss'
 
-export default class Login extends Component {
+ class Login extends Component {
     constructor() {
         super();
         this.state={
@@ -11,9 +15,9 @@ export default class Login extends Component {
             password: '',
             redirect: false
         }
-    this.handleUsername=this.handleUsername.bind(this)
-    this.handlePassword=this.handlePassword.bind(this)
+    this.handleChange= this.handleChange.bind(this)
     this.loginClient=this.loginClient.bind(this)
+    
     }
     handleUsername(e) {
         this.setState({username: e.target.value})
@@ -22,37 +26,40 @@ export default class Login extends Component {
         this.setState({password: e.target.value})
     }
     loginClient() {
-        axios.post('/auth/login', {
-            username: this.state.username,
-            password: this.state.password
-        }).then(() => this.setState({redirect: true})).catch(() => alert('Wrong Username or Password. Try again.'))
+        const {loginClient, history} = this.props;
+        const {username, password} = this.state;
+        loginClient({username, password}, history)
     }
+    handleChange(prop, val) {
+        this.setState({[prop]: val})
+    }
+
+ 
 
     render() {
         if(this.state.redirect) {
             alert('Welcome Back')
-            return <Redirect to='/dashboard' />
+            return <Redirect to='/' />
         }
         return (
             <div className="page">
                 <div className="container">
-                    <div className="left">
-                        <div className="login">
-                        <div className='terms'>
-                    <div className="right">
-                        
+                    <div id="left">
+                        <div className="login-container">Login</div>
+                        <div id="eula">By logging in your agree to the ridiculously long terms that you didn't bother to read.</div>
                     </div>
-                        </div>
-                        </div>
+                    <div id="right">
+
                     </div>
                 </div>
                 <h1>Sign in</h1>
                 <form>
-                    <input onChange={this.handleUsername}/>
-                    <input onChange={this.handlePassword}/>
+                    <input onChange={ (e) => this.handleChange('username', e.target.value)}/>
+                    <input onChange={ (e) => this.handleChange('password', e.target.value)}/>
                     <button onClick={this.loginClient}>Login</button>
                 </form>
             </div>
         )
     }
 }
+export default connect(state => state, {loginClient}) (Login)

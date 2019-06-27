@@ -11,6 +11,7 @@ import Categories from '../components/Store/Categories'
 import Account from '../components/User/Account/Account'
 import Settings from '../components/User/Account/Settings'
 import Items from '../components/Store/Item'
+import Checkout from '../components/checkout/Checkout'
 
 
 export default (
@@ -19,8 +20,9 @@ export default (
         <Route component = {About} path = '/about' />
         <Route component = {Login}  path = '/login' />
         <Route component = {Register} path = '/register' />
+        <Route component = {Checkout} path = '/checkout/shipping-details' />
         <Route component = {ShoppingCart} path = '/cart' />
-        <Route component = {Favorites} path = './saved'/>
+        <Route component = {Favorites} path = '/saved'/>
         <Route component = {Dashboard} path = '/dashboard' />
         <Route component = {Items} path = '/categories/:id/:id' />
         <Route component = {Categories} path = '/categories/:id' />

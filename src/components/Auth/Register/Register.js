@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios'
 import {Redirect, Link} from 'react-router-dom';
+import NavBar from '../../Landing Page/NavBar'
 import './Register.scss'
 
 export default class Register extends Component {
@@ -48,7 +49,7 @@ export default class Register extends Component {
             return <Redirect to='/dashboard' />
         }
         return (
-            <div className="register">
+                <div className="register">
                 <h1>Sign-up</h1>
                 <form>
                     <input onChange={this.handleName} placeholder="violet"/>

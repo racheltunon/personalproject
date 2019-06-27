@@ -11,7 +11,8 @@ module.exports = {
     addToCart: (req, res) => {
         req.session.client.cart.push(req.body);
         req.session.client.total += req.body.price
-        res.status(200).json(req.session.client)
+        res.status(200).json([req.session.client.cart, req.session.client.total])
+        console.log(req.session.client.cart)
         console.log(req.session.client.total)
     },
     updateCart: (req, res) => {

@@ -29,7 +29,7 @@ app.use(
 //authentication endpoints
 app.post('/auth/register', registerClient)
 app.post('/auth/login', loginClient)
-app.post('/auth/client', getClient)
+app.get('/auth/client', getClient)
 app.post('/auth/logout', logoutClient)
 
 //store endpoints

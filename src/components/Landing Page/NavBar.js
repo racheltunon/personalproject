@@ -13,7 +13,7 @@ import { timingSafeEqual } from 'crypto';
 
 class NavBar extends Component {
     constructor(props) {
-        super();
+        super(props);
         this.state ={
             links: [
                 {name: "Categories", id: 1 },
@@ -28,14 +28,14 @@ class NavBar extends Component {
     }
 
     componendDidMount() {
-        this.props.getUser()
+        this.props.getClient()
     }
     render() {
-
+        console.log(this.props.client)
         const linkMap = this.state.links.map((element, index) => {
-       if (this.props.client.login && index ===3)
+       if (this.props.client && index ===3)
             return (
-                <Link to='/dashboard' className='link4' >{this.props.client.login}'s Account</Link>
+                <Link to='/' className='link4' >{this.props.client.username}'s Account</Link>
             ); else if (index === 3)
             return (
                 <Link className="link4" key={element.id} to='/login'>
@@ -65,9 +65,9 @@ class NavBar extends Component {
 }
 
 const mapStateToProps = state => {
+    const {client} = state.client
     return {
-        cart: state.cart,
-        client: state.client
+        client
     }
 }
 export default connect(

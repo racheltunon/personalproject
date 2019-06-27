@@ -25,12 +25,15 @@ import axios from 'axios';
          const showCategoryItems = category.map((element, id) => {
         
              return (
+
                  <div className="categoryItem" key={element.id}>
                         <Link to={`/categories/${this.props.match.params.id}/${element.id}`}>
                             <img id="main-img" src={element.main_img}/> 
                         </Link>
                             <h1>{element.name}</h1>
                             <h3>${element.price}</h3>
+                        <Link to="/saved"><button>save.</button></Link>
+                            
                     
                  </div>
              )
@@ -45,6 +48,12 @@ import axios from 'axios';
         return (
             <div>
                 <NavBar />
+                <Link to="/">
+                    <button>back home.</button>
+                </Link>
+                <Link to="/categories">
+                    <button>all categories.</button>
+                </Link>
             <div>{showCategoryItems}</div>
             </div>
         )
