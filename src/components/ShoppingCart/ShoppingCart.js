@@ -71,7 +71,7 @@ class ShoppingCart extends Component {
                     this.props.client.cart.length ===0 ? <div className="message"><div className="empty-bag">Your cart is empty. Lets Shop!</div></div> :
                     
                     <div className="checkout-container">
-                        <Link to="/checkout/shipping-details">
+                        <Link to="/checkout">
                             <button className="checkout-button">checkout</button>
                         </Link>
                     </div>}

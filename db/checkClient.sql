@@ -1,1 +1,2 @@
-SELECT password FROM clients WHERE username = $1
+SELECT * FROM clients 
+WHERE username = $1;

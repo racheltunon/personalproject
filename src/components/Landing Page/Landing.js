@@ -48,7 +48,9 @@ import './Landing.scss'
                    <NavBar className="navBar"/>
                    <div className="title">
                    <h3>#WeThriftYouScore</h3>
-                   <h1>VIOLET RIOT VINTAGE</h1>
+                   <div className="knockout-text">
+                        <h1>VIOLET RIOT VINTAGE</h1>
+                   </div>
                     </div>
                    <Link className="learn" to="/about">
                        <h4>learn more.</h4>

@@ -19,6 +19,7 @@ import axios from 'axios';
          this.props.displayCategory(this.props.match.params.id);
          this.props.displayItems();
      }
+     
      render() {
          const {category, items, loading} = this.props.store
          console.log(this.props)

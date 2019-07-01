@@ -9,6 +9,7 @@ import Favorites from '../components/Favorites/Favorites'
 import Dashboard from '../components/Store/Dashboard/Dashboard'
 import Categories from '../components/Store/Categories'
 import Account from '../components/User/Account/Account'
+import Avatar from '../components/upload/Avatar'
 import Settings from '../components/User/Account/Settings'
 import Items from '../components/Store/Item'
 import Checkout from '../components/checkout/Checkout'
@@ -20,7 +21,7 @@ export default (
         <Route component = {About} path = '/about' />
         <Route component = {Login}  path = '/login' />
         <Route component = {Register} path = '/register' />
-        <Route component = {Checkout} path = '/checkout/shipping-details' />
+        <Route component = {Checkout} path = '/checkout' />
         <Route component = {ShoppingCart} path = '/cart' />
         <Route component = {Favorites} path = '/saved'/>
         <Route component = {Dashboard} path = '/dashboard' />
@@ -28,6 +29,7 @@ export default (
         <Route component = {Categories} path = '/categories/:id' />
         <Route component = {Categories} path = '/categories' />
         <Route component = {Account} path = '/account' />
+        <Route component = {Avatar} path = '/upload-profile-pic' />
         <Route component = {Settings} path = '/account/:settings' />
     </Switch>
 )
