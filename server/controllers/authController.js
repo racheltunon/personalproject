@@ -23,28 +23,29 @@ module.exports={
     },
     loginClient: (req, res) => {
         const {username, password} = req.body;
-         const db = req.app.get('db')
-          db.checkClient(username).then(async response => {   
-             if (!response.length) {
-                 res.status(401).json({error: "no user found"})
-             } else {
-                 const doesMatch =  await bcrypt.compare(password, response[0].password)
-                 if (!doesMatch) {
-                     res.status(403).json({error: "Incorrect Username or Password"})
-                 } else {
-                     req.session.client = {
-                         client_id: response[0].client_id,
-                         name: response[0].name,
-                         username: response[0].username,
-                         email: response[0].email,
-                         profile_pic: '',
-                         cart: [],
-                         total: 0
-                     }
-                 }
-                 res.json(req.session.client)
-             }
-             })},
+        const db = req.app.get('db')
+        db.checkClient(username).then(async response => {   
+            if (!response.length) {
+                res.status(401).json({error: "no user found"})
+            } else {
+                const doesMatch =  await bcrypt.compare(password, response[0].password)
+                if (!doesMatch) {
+                    res.status(403).json({error: "Incorrect Username or Password"})
+                } else {
+                    req.session.client = {
+                        client_id: response[0].client_id,
+                        name: response[0].name,
+                        username: response[0].username,
+                        email: response[0].email,
+                        isAdmin: response[0].isAdmin,
+                        profile_pic: '',
+                        cart: [],
+                        total: 0
+                    }
+                }
+                res.json(req.session.client)
+            }
+            })},
     logoutClient: (req, res) => {
         const {session} = req;
         session.destroy();
@@ -56,7 +57,7 @@ module.exports={
         } else {
             res.status(401).json({error: "Please Log In"})
         }
-     }
+    }
 }
 
 
@@ -75,5 +76,5 @@ module.exports={
         //     res.status(403).json({error: "Incorrect Username or Password"})
         // }
     // })
-   
+    
 

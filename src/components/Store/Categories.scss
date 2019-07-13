@@ -1,8 +1,5 @@
 .category-container {
     display: flex;
-   
-
-    
 }
 
 
@@ -11,9 +8,8 @@
     margin-left: 20px;
 
 }
-.category-container {
-
-    
+#main-img {
+    max-block-size: 200px;
 }
 .categoryList {
     background-image: linear-gradient(to bottom, #351f6b29, #3f2368e3, #472765, #4d2c62, #523160, #673a65, #7b446a, #8d4f6e, #b36474, #d47d77, #ee9b79, #ffbe7e);
@@ -28,3 +24,70 @@
     top: 800px;
 
 }
+.categoryItem {
+    display: flex;
+    justify-content: first baseline;
+    align-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    // border: dotted black;
+    padding: 10px;
+    width: 70%;
+    // margin-top: 200px;
+    font-family: 'Inter';
+    font-style: Medium;
+    
+    
+}
+.cat-options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: center;
+    // border: solid white;
+    // margin-left: 30px;
+    color: rgb(100, 62, 100);
+    width: 300px;
+    height: 100px;
+    
+}
+.main-img {
+    max-block-size: 60px;
+}
+
+.categories-component {
+    // border: solid white;
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 150px;
+    align-content: flex-start;
+    height: 440px;
+}
+.cat-options h1 {
+    font-size: 18px;
+}
+
+.cat-options h2 {
+    color: white;
+    font-family: 'Inter';
+    font-weight: 200;
+    font-size: 18px;
+}
+.cat-options h4 {
+    margin-top: 0px;
+    color: white;
+    font-family: 'Inter';
+    font-style: 'black';
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.hopeItWorks {
+    display: flex;
+    flex-direction: row;
+    overflow: visible;
+    scroll-behavior: smooth;
+}
+

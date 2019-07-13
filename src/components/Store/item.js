@@ -12,7 +12,6 @@ class Item extends Component {
             itemInfo:[],
             description: false,
             material: false,
-           
         }
         this.putInCart = this.putInCart.bind(this);
     }
@@ -23,7 +22,6 @@ class Item extends Component {
             this.setState({itemInfo: response.data})
         })
         this.props.updateCart()
- 
     }
     
     
@@ -40,20 +38,27 @@ class Item extends Component {
             if (item.id === +this.props.match.params.id) {
                 this.state.itemInfo.push(item)
                 return (
-                    <>
-                    <h1>{item.name}</h1>
-                    <img src={item.main_img} />
-                    </>
+                    <div className="item-options">
+                    <img src={item.main_img} 
+                    />
+                    <h1 >{item.name}</h1>
+                    <h2 >{item.material}</h2>
+                    <h3 >{item.description}</h3>
+                    <h4 >${item.price}</h4>
+                    </div>
                 )
             }
         })
         return (
             <div>
                 <NavBar />
-                <h1>This is supposed to be an item</h1>
+                <div className="item-box">
                 {displayItem}
+                <Link to="/landing">
                 <button>back.</button>
+                </Link>
                 <button onClick={this.putInCart} className="add-to-cart-button">add to cart.</button>
+                </div>
 
 
 

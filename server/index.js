@@ -4,8 +4,9 @@ const massive = require('massive')
 const session = require('express-session')
 const {registerClient, loginClient, logoutClient, getClient} = require('./controllers/authController')
 const {displayCategories, displayCategory, displayItems, addItem, editItemInfo, getItemInfo} = require('./controllers/storeController')
-const {addFavorite, getFavorites, getProfilePic} = require('./controllers/userController')
-const {createOrder} = require('./controllers/checkoutController')
+const {addFavorite, getFavorites, getProfilePic, editUsername} = require('./controllers/userController')
+const {createOrder, createCharge} = require('./controllers/checkoutController')
+const {editProductInfo} = require('./controllers/adminController')
 const {removeItem, addToCart, updateCart} = require('./controllers/cartController')
 
 const app = express();
@@ -34,6 +35,7 @@ app.post('/auth/login', loginClient)
 app.get('/auth/client', getClient)
 app.post('/auth/logout', logoutClient)
 
+
 //store endpoints
 //app.post('/api/admin/add', addProduct)
 app.get('/api/categories', displayCategories)
@@ -51,10 +53,11 @@ app.get('/api/cart', updateCart)
 // app.get('/checkout/previous-address/:id', getPreviousAddress)
 // app.post('/checkout/update-address-status', updateAddressStatus)
 app.post('/checkout/add-order', createOrder)
+app.post('/createCharge', createCharge)
 
 
 //admin endpoints 
-// app.put('/api/edit-product/:id', editProductInfo)
+app.put('/api/product/:id', editProductInfo)
 // app.get('/admin/clients', getClients)
 // app.get('/adim/get-order-info', getOrderInfo)
 
@@ -63,6 +66,7 @@ app.post('/client/favorites/:id', addFavorite)
 // app.delete('/client/favorites/:id', removeFavorite)
 app.get('/client/favorites', getFavorites)
 app.post('/client/add-profile-pic', getProfilePic)
+app.put('/client/edit-username/:id', editUsername)
 
 
 massive(CONNECTION_STRING).then(db => {

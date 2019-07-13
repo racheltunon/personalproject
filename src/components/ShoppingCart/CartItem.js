@@ -14,15 +14,16 @@ export default class CartItem extends Component {
                         <div id="main-img">
                             <img alt='' src={this.props.element.main_img}/>
                         </div>
-                        <div className="name">
+                        <div another-dumb-div>
+                        <div className="img-name">
                             {this.props.element.name}
-                            <div className="discription">
+                        </div>
+                            <div className="description">
                                 <div>{this.props.element.description}</div>
-                                <div>{this.props.element.material}</div>
-                                <div>{this.props.element.price}</div>
 
                             </div>
-                            <button onClick={()=> this.props.deleteItem(this.props.element.id, this.props.element.price)}></button>
+                                <div>{this.props.element.material}</div>
+                                <div>{this.props.element.price}</div>
                         </div>
                     </div>
                 </div>

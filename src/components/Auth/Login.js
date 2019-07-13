@@ -3,8 +3,10 @@ import axios from 'axios'
 import {Link} from 'react-router-dom'
 import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {loginClient} from '../../redux/clientReducer'
+import {loginClient, getClient} from '../../redux/clientReducer'
+import AdminDashboard from '../Admin/AdminDashboard'
 // import {ReactComponent as Snake} from './Register/Snake.svg'
+
 import './Login.scss'
 
  class Login extends Component {
@@ -26,40 +28,45 @@ import './Login.scss'
         this.setState({password: e.target.value})
     }
     loginClient() {
-        const {loginClient, history} = this.props;
+        const {loginClient, history, isAdmin} = this.props;
         const {username, password} = this.state;
         loginClient({username, password}, history)
     }
     handleChange(prop, val) {
         this.setState({[prop]: val})
     }
+    componentDidMount() {
+        this.props.getClient();
 
- 
+    }
+
+
 
     render() {
-        if(this.state.redirect) {
-            alert('Welcome Back')
-            return <Redirect to='/' />
-        }
+        const { client } = this.props
         return (
             <div className="page">
-                <div className="container">
-                    <div id="left">
-                        <div className="login-container">Login</div>
-                        <div id="eula">By logging in your agree to the ridiculously long terms that you didn't bother to read.</div>
-                    </div>
-                    <div id="right">
-
-                    </div>
+            {client.client_id && client.isAdmin ? <Redirect to="/dashboard" /> 
+            :client.client_id ? <Redirect to="/Landing" /> :
+            <div className="page">
+                <div className="login-container">
+                    <form className="login-form">
+                    <h1>Sign in</h1>
+                        <input onChange={ (e) => this.handleChange('username', e.target.value)}/>
+                        <input onChange={ (e) => this.handleChange('password', e.target.value)}/>
+                        <button onClick={this.loginClient}>Login</button>
+                    </form>
+                    
                 </div>
-                <h1>Sign in</h1>
-                <form>
-                    <input onChange={ (e) => this.handleChange('username', e.target.value)}/>
-                    <input onChange={ (e) => this.handleChange('password', e.target.value)}/>
-                    <button onClick={this.loginClient}>Login</button>
-                </form>
+            </div>}
             </div>
         )
     }
 }
-export default connect(state => state, {loginClient}) (Login)
+const mapStateToProps = state => {
+    const {client} = state.client
+    return {
+        client
+    }
+}
+export default connect(mapStateToProps, {loginClient, getClient: getClient}) (Login)

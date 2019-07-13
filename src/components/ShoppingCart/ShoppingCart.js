@@ -51,15 +51,11 @@ class ShoppingCart extends Component {
     })
         return (
             <div>
-               <div className="cart">
-                   <NavBar />
-
-                   <div className="header-container">
-                    <div className= "header-bar">
-                        <div id="price">price</div>
-                        <div id="remove">remove</div>
-                    </div>
-                   </div>
+            <div className="cart">
+                <div className="cart-nav">
+                <NavBar />
+                </div>
+                <div className="shopping-cart">
                     {this.props.client.cart && cartList}
                     <div className="subtotal-container">
                         {this.props.client && <p id="subtotal">Subtotal:${this.props.client.total}</p>}
@@ -75,6 +71,7 @@ class ShoppingCart extends Component {
                             <button className="checkout-button">checkout</button>
                         </Link>
                     </div>}
+                    </div>
 
 
 

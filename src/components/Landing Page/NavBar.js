@@ -1,29 +1,30 @@
 import React, {Component}from 'react'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux';
 import {getClient} from '../../redux/clientReducer'
-import {ReactSVG} from 'react-svg'
+// import Login from '../Auth/Login'
+// import Register from '../Auth/Register/Register'
+import AdminDashboard from '../Admin/AdminDashboard'
+import Landing from './Landing'
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import Dropdown from 'react-bootstrap/Dropdown'
+import './Landing.scss'
+
+//SVG's//
 import {ReactComponent as Heart} from './Heart.svg'
 import {ReactComponent as Client} from './Client.svg'
 import {ReactComponent as Cart} from './Cart.svg'
 import {ReactComponent as Search} from './Search.svg'
-// import ProfilePic from '../../images/IconOffice'
-import './Landing.scss'
-import { timingSafeEqual } from 'crypto';
+
+
+
+
 
 class NavBar extends Component {
     constructor(props) {
         super(props);
         this.state ={
-            links: [
-                {name: "Categories", id: 1 },
-                {name: 'logo', id: 2, },
-                {name: 'search', id: 3, },
-                {name: 'login', id: 4, },
-                {name: 'cart', id: 6, },
-                
-
-            ]
+            
         }
     }
 
@@ -31,33 +32,53 @@ class NavBar extends Component {
         this.props.getClient()
     }
     render() {
-        console.log(this.props.client)
-        const linkMap = this.state.links.map((element, index) => {
-       if (this.props.client && index ===3)
-            return (
-                <Link to='/' className='link4' >{this.props.client.username}'s Account</Link>
-            ); else if (index === 3)
-            return (
-                <Link className="link4" key={element.id} to='/login'>
-                    <Client />
-                </Link>
-            ) 
-        })
+    console.log(this.props)
+    const { client } = this.props
     return (
+        // !client.client_id ? (
+        //     <div className="nav-dropdown">
+        //     <Login />
+        //     <Register />
+        //     </div>
+        // ) : 
+
+        // client.client_id && !client.isAdmin ? (
+            // <div>
         <div className="nav">
             <Link to='/'>
-               <Search />
+            <Search /> 
             </Link>
             <div className='right-nav'>
                 <Link to='/saved'>
                     <Heart />
                 </Link>
-                {linkMap}
+                <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+                    <Link to='/account'>  
+                    <Dropdown.Item href="#/action-1">Account</Dropdown.Item>
+                    </Link>
+                    </DropdownButton>
                 <Link to='/cart'>
                     <Cart />
                 </Link>
             </div>
         </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
 
     )

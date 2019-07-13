@@ -3,6 +3,8 @@ import axios from 'axios'
 const initialState = {
     loading: false,
     client: {},
+    newUsername: '',
+    isAdmin: null,
     error: "",
     cart: [],
     total: 0,
@@ -16,6 +18,7 @@ const ADD_TO_CART = "ADD_TO_CART"
 const GET_CART = "GET_CART"
 const UPDATE_CART = 'UPDATE_CART'
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
+const EDIT_USERNAME = 'EDIT_USERNAME'
 
 export default function reducer(state = initialState, action) {
     let {payload} = action
@@ -29,6 +32,8 @@ export default function reducer(state = initialState, action) {
             return {...state, error: 'Username or Password is Incorrect'}
         case `${GET_CLIENT}_FULFILLED`:
             return Object.assign({}, state, {client: payload})
+        case `${EDIT_USERNAME}_FULFILLED`:
+            return {...state, newUsername: payload.data}
         case `${ADD_TO_CART}_FULFILLED`:
             return Object.assign({}, state, {cart: payload.cart, total: payload.total})
         case GET_CART:
@@ -53,6 +58,13 @@ export function getClient() {
         type: GET_CLIENT,
         payload: axios.get('/auth/client').then(response => response.data)
     };
+}
+
+export function editUsername(client_id,newUsername) {
+    return {
+        type: EDIT_USERNAME,
+        payload: axios.put(`/client/edit-username/${client_id}`, {newUsername}).then(response => response.data)
+    }
 }
 export function addToCart(item) {
     return {
@@ -89,7 +101,7 @@ export function loginClient(obj, history) {
     return {
         type: LOGIN,
         payload: axios.post('/auth/login', obj).then( response => {
-            history.push('/');
+            // history.push('/');
             return response.data;
         })
     }
