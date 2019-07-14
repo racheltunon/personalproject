@@ -6,8 +6,6 @@ import {getClient} from '../../redux/clientReducer'
 // import Register from '../Auth/Register/Register'
 import AdminDashboard from '../Admin/AdminDashboard'
 import Landing from './Landing'
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import Dropdown from 'react-bootstrap/Dropdown'
 import './Landing.scss'
 
 //SVG's//
@@ -49,14 +47,12 @@ class NavBar extends Component {
             <Search /> 
             </Link>
             <div className='right-nav'>
+                <Link to='/login'>
+                <Client />
+                </Link>
                 <Link to='/saved'>
                     <Heart />
                 </Link>
-                <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-                    <Link to='/account'>  
-                    <Dropdown.Item href="#/action-1">Account</Dropdown.Item>
-                    </Link>
-                    </DropdownButton>
                 <Link to='/cart'>
                     <Cart />
                 </Link>

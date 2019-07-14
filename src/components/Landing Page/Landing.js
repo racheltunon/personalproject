@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Categories from '../Store/Categories'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import {displayCategories} from '../../redux/categoriesReducer'
 import {connect} from 'react-redux'
 import NavBar from '../Landing Page/NavBar'
@@ -31,7 +31,10 @@ constructor(props) {
             <div className="category-container" key={category.category_id}>
                 
                 <Link to={`/categories/${category.category_id}`}>
-                    <img className="categories"src={category.cat_img} alt="category-images"/>
+                    <img className="categories-img"src={category.cat_img} alt="category-images"/>
+                    <div className='overlay'>
+                        <div className="category-text">{category.category_name}</div>
+                    </div>
                     
                 </Link>
             </div>

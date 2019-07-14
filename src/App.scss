@@ -1,39 +1,5 @@
-
-$base-color: #EC7263;
-
-
-body {
-    background: $base-color;
-    padding: 0;
-}
-button {
-        cursor: pointer;
-        border-radius: 50px;
-        border: white;
-        color: black;
-        font-size: 14px;
-        height: 30px;
-        font-family: 'Inter';
-        font-weight: bold;
-        outline: none;
-        width: 70px;
-        // -webkit-filter: drop-shadow(5px 5px 5px rgb(54, 54, 54));
-        // filter: drop-shadow(-5px 5px 10px rgb(15, 15, 15));
-}
-
-button .back-home {
-    border: none;
-    font-size: 12px;
-}
-.nav {
-    justify-content: space-between;
-    align-content: center;
-    margin-left: 0px;
-
-}
-.cart-nav {
-    margin-left: 0px;
-    
-}
-
-
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+html { font-family: 'Inter var', sans-serif; }
+};

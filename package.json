@@ -13,6 +13,7 @@
     "express": "^4.17.1",
     "express-fileupload": "^1.1.5",
     "express-session": "^1.16.2",
+    "inter-ui": "^3.7.0",
     "jquery": "^3.4.1",
     "massive": "^5.11.0",
     "node-sass": "^4.12.0",

@@ -18,7 +18,6 @@ export default (
     <Switch>
         <Route component = {About} path = '/about' />
         <Route component = {Register} path = '/register' />
-        <Route component = {Landing}  path = '/landing' />
         <Route component = {Checkout} path = '/checkout' />
         <Route component = {ShoppingCart} path = '/cart' />
         <Route component = {Favorites} path = '/saved'/>
@@ -29,7 +28,8 @@ export default (
         <Route component = {Account} path = '/account' />
         <Route component = {Avatar} path = '/upload-profile-pic' />
         <Route component = {Settings} path = '/account/:settings' />
-        <Route component = {Login}  path = '/' />
+        <Route component = {Login}  path = '/login' />
+        <Route component = {Landing}  exact path = '/' />
     </Switch>
 )
 

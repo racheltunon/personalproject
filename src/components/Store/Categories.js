@@ -29,7 +29,7 @@ class Categories extends Component {
         const showCategoryItems = category.map((element, id) => {
     
             return (
-                <div className="categories-component">
+                <div className='categories-container'>
                 <div className="categoryItem" key={element.id}>
                     <Link to={`/categories/${this.props.match.params.id}/${element.id}`}>
                         <img id="main-img" src={element.main_img}/> 
@@ -55,12 +55,10 @@ class Categories extends Component {
     //      </div>
     //  )
     return (
-        <div>
+        <div className='navigation'>
             <NavBar />
-            <Link to="/Landing">
-                {/* <button className="back-home">back home.</button> */}
-            </Link>
-        <div className="hopeItWorks">{showCategoryItems}</div>
+        <div className="categories-component">
+        {showCategoryItems}</div>
         </div>
     )
     }

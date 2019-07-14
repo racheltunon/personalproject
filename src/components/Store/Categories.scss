@@ -1,93 +1,114 @@
-.category-container {
-    display: flex;
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+html { font-family: 'Inter var', sans-serif; }
 }
 
 
-.categories {
-    max-height: 80px;
-    margin-left: 20px;
+.categoryList {
+    background: rgb(50,28,105);
+    background: linear-gradient(180deg, rgba(50,28,105,0.9108018207282913) 0%, rgba(87,56,93,1) 19%, rgba(166,82,100,1) 49%, rgba(236,114,99,1) 69%, rgba(255,190,126,1) 100%);
+    width: 100vw;
+    position: absolute;
+    z-index: 5;
+    margin-top: 47.5%;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-content: space-between;
 
+
+}
+
+.category-container {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.categories-img {
+    border: solid rgba(255, 208, 0, 0.692);
+    border-radius: 50% ;
+    height: 100px;
+    width: 100px;
+
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #ffbe7e;
+}
+
+.category-container:hover .overlay {
+    opacity: 0.9;
+    border-radius: 50%;
+    height: 110px;
+    width: 110px;
+} 
+.category-text {
+    color: #57385d;
+    font-size: 16px;
+    font-family: 'Inter var';
+    font-style: italic;
+    font-weight: 600;
+    line-height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.categories-component{
+    margin-top: 155px;
+    width: 80vw;
+    height: 100vh;
+}
+
+.categoryItem {
+    border-radius: 8px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    float: left;
+    width: 300px;
+    padding: 10px;
+    height: 500px;
+    margin-top: 20px;
+    margin-left: 44px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #main-img {
-    max-block-size: 200px;
-}
-.categoryList {
-    background-image: linear-gradient(to bottom, #351f6b29, #3f2368e3, #472765, #4d2c62, #523160, #673a65, #7b446a, #8d4f6e, #b36474, #d47d77, #ee9b79, #ffbe7e);
-    position: absolute;
-    padding-top: 30px;
-    z-index: 5;
-    width: 100vw;
-    height: 1300px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    top: 800px;
-
-}
-.categoryItem {
-    display: flex;
-    justify-content: first baseline;
-    align-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    // border: dotted black;
-    padding: 10px;
-    width: 70%;
-    // margin-top: 200px;
-    font-family: 'Inter';
-    font-style: Medium;
-    
-    
-}
-.cat-options {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    align-content: center;
-    // border: solid white;
-    // margin-left: 30px;
-    color: rgb(100, 62, 100);
-    width: 300px;
-    height: 100px;
-    
-}
-.main-img {
-    max-block-size: 60px;
+    border: solid black;
+    width: 250px;
+    height: 250px;
+    margin-top: 30px;
 }
 
-.categories-component {
-    // border: solid white;
-    width: 550px;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    margin-top: 150px;
-    align-content: flex-start;
-    height: 440px;
-}
-.cat-options h1 {
-    font-size: 18px;
-}
-
-.cat-options h2 {
-    color: white;
-    font-family: 'Inter';
-    font-weight: 200;
-    font-size: 18px;
-}
-.cat-options h4 {
-    margin-top: 0px;
-    color: white;
-    font-family: 'Inter';
-    font-style: 'black';
-    font-weight: 100;
+.categoryItem h1 {
     font-size: 14px;
+    font-family: 'Inter var';
+    font-style: bold;
+    font-weight: 600;
+    color: white;
 }
-
-.hopeItWorks {
+.navigation {
+    background: #a65264;
     display: flex;
-    flex-direction: row;
-    overflow: visible;
-    scroll-behavior: smooth;
+    justify-content: center;
+    overflow: auto;
 }
-
