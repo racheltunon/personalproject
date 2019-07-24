@@ -21,8 +21,15 @@ const createOrder = (req, res) => {
 }
 
 const createCharge = (req, res, app) => {
-    stripe.charges.create(req.body, postStripeCharges(res))
-    return app;
+    console.log(req.body)
+    const {amount, source, description} = req.body
+    
+    stripe.charges.create({amount, source, description, currency:"usd"}).then((response) => {
+        res.sendStatus(200)
+    }).catch((error) => {
+        console.log(error)
+    })
+
 }
 module.exports = {
     createOrder,

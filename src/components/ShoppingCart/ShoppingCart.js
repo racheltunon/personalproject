@@ -69,6 +69,7 @@ class ShoppingCart extends Component {
                     <div className="checkout-container">
                         <Link to="/checkout">
                             <button className="checkout-button">checkout</button>
+                            <button onClick={this.deleteItem}>delete</button>
                         </Link>
                     </div>}
                     </div>

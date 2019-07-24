@@ -47,7 +47,7 @@ import './Login.scss'
         return (
             <div className="page">
             {client.client_id && client.isAdmin ? <Redirect to="/dashboard" /> 
-            :client.client_id ? <Redirect to="/Landing" /> :
+            :client.client_id ? <Redirect to="/" /> :
             <div className="page">
                 <div className="login-container">
                     <form className="login-form">

@@ -78,7 +78,6 @@ html { font-family: 'Inter var', sans-serif; }
 
 .categoryItem {
     border-radius: 8px;
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -90,25 +89,41 @@ html { font-family: 'Inter var', sans-serif; }
     height: 500px;
     margin-top: 20px;
     margin-left: 44px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #main-img {
-    border: solid black;
-    width: 250px;
+    position: relative;
+    z-index: 1;
+    width: 260px;
     height: 250px;
-    margin-top: 30px;
+    top: 100px;
+    left: 20px;
 }
 
-.categoryItem h1 {
-    font-size: 14px;
+.price {
+    position: relative;
+    z-index: 3;
+    top: 0px;
     font-family: 'Inter var';
+    font-size: 100px;
     font-style: bold;
-    font-weight: 600;
-    color: white;
+    font-weight: 700;
+    letter-spacing: -5px;
+    color:black;
 }
 .navigation {
     background: #a65264;
     display: flex;
     justify-content: center;
     overflow: auto;
+}
+
+.cat-options h4 {
+    position: relative;
+    z-index: 1;
+    top: -30px;
+    color: white;
+    font-family: 'Inter var';
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25px;
 }

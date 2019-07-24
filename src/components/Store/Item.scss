@@ -1,0 +1,41 @@
+.item-component {
+    background: #ffbe7e;
+    height: 100vh;
+    border: solid red;
+    display: flex;
+    justify-content: center;
+    
+}
+.item-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid black;
+    width: 80%;
+
+}
+.item-options {
+    display: flex;
+    justify-content: space-around;
+    border: solid blue;
+    width: 56%;
+    height: 50%;
+}
+
+.item-options img {
+    width: 400px;
+    height: 400px;
+}
+.item-options h1 {
+    font-size: 20px;
+    font-family: 'Inter var';
+    font-style: normal;
+    font-weight: 900;
+    line-height: 30px;
+    
+}
+
+.item-info {
+    border: solid purple;
+    width: 50%;
+}

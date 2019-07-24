@@ -4,6 +4,7 @@ import axios from 'axios'
 import {Link, Redirect, } from 'react-router-dom'
 import {getClient, addToCart, updateCart} from '../../redux/clientReducer'
 import NavBar from '../Landing Page/NavBar'
+import './Item.scss'
 
 class Item extends Component {
     constructor(props) {
@@ -41,23 +42,23 @@ class Item extends Component {
                     <div className="item-options">
                     <img src={item.main_img} 
                     />
+                    <div className='item-info'>
                     <h1 >{item.name}</h1>
                     <h2 >{item.material}</h2>
                     <h3 >{item.description}</h3>
                     <h4 >${item.price}</h4>
+                    <button onClick={this.putInCart} className="add-to-cart-button">add to cart.</button>
+                    </div>
                     </div>
                 )
             }
         })
         return (
-            <div>
+            <div className='item-component'>
                 <NavBar />
                 <div className="item-box">
                 {displayItem}
-                <Link to="/landing">
-                <button>back.</button>
-                </Link>
-                <button onClick={this.putInCart} className="add-to-cart-button">add to cart.</button>
+                
                 </div>
 
 

@@ -2,14 +2,15 @@ import React, {Component} from 'react'
 import {connect } from 'react-redux'
 import {Link, Redirect} from 'react-router-dom'
 import { displayItems, displayCategory} from '../../redux/categoriesReducer'
+import {handleUpdateFavorites} from '../../redux/userReducer'
 import NavBar from '../Landing Page/NavBar'
 import './Categories.scss'
 import axios from 'axios';
 
 
 class Categories extends Component {
-    constructor() {
-        super() 
+    constructor(props) {
+        super(props) 
         this.state ={
         redirect: false
         }
@@ -22,6 +23,13 @@ class Categories extends Component {
         this.props.displayItems();
     }
     
+    addToFavorites = () => {
+        axios
+        .post(`/client/favorites/${this.props.match.params.id}`)
+        .then(() => {
+            this.props.handleUpdateFavorites({})
+        }).catch(err => console.log(err))
+    }
     
     render() {
         const {category, items, loading} = this.props.store
@@ -35,11 +43,11 @@ class Categories extends Component {
                         <img id="main-img" src={element.main_img}/> 
                     </Link>
                     <div className="cat-options">
-                        <h1>{element.name}</h1>
+                        <div className='price'>${element.price}</div>
                         {/* <h2> Material: {element.material}</h2> */}
                         {/* <h3>{element.description}</h3> */}
-                        <h4>${element.price}</h4>
-                    <Link to="/saved"><button>save.</button></Link>
+                        <h4>{element.name}</h4>
+                    {/* <button onClick={this.handleUpdateFavorites}>save.</button> */}
                     </div>
                         
                 
@@ -72,4 +80,4 @@ return {
 }
 export default connect(
 mapStateToProps,
-{displayCategory, displayItems})(Categories);
+{displayCategory, displayItems, handleUpdateFavorites})(Categories);
